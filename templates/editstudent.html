@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT STUDENT</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Dancing Script', cursive;
+        background: linear-gradient(135deg, #1a1a1a, #232323, #767771);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background-color: linear-gradient(135deg, #1a1a1a, #232323, #767771);
+        color: white;
+        border: 2px solid aqua;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 20px 20px rgba(39, 165, 187, 0.2);
+        /* filter:drop-shadow( 4px 2px 4px aqua); */
+        width: 350px;
+        text-align: center;
+    }
+
+    h3 {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 20px;
+
+    }
+
+    table {
+        width: 100%;
+        margin: 0 auto;
+        border-spacing: 10px;
+    }
+
+    td {
+        text-align: left;
+        color: #e7e2e2;
+        font-size: 14px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgb(23, 155, 196);
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #118878;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h3>WELCOME TO UPDATE PAGE</h3>
+        <form action="/updatetostudenttable" method="post">
+            <table>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="text" name="sid" value="{{rows[0][0]}}" readonly placeholder="Your ID"></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="sname" value="{{rows[0][1]}}" placeholder="Your Name"></td>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="snum" value="{{rows[0][2]}}" placeholder="Your Phone"></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="saddress" value="{{rows[0][3]}}" placeholder="Your Address"></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="date" name="sdob" value="{{rows[0][4]}}"></td>
+                </tr>
+                <tr>
+                    <td>Date of Joining:</td>
+                    <td><input type="date" name="sdoj" value="{{rows[0][5]}}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" name="update" value="update"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>
